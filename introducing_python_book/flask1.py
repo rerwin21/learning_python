@@ -6,7 +6,7 @@ app = Flask(__name__, static_folder = '.', static_url_path = '')
 def home():
     return app.send_static_file('index.html')
     
-app.route('/echo/<thing>')
+@app.route('/echo/<thing>')
 def echo(thing):
     return "Say hello to my little friend: %s" % thing
     
